@@ -6,11 +6,11 @@
     "dev": "node ace serve --watch",
     "package:install": "npm i",
     "build": "node ace build --production",
-    "prod": "npm run package:install && npm run build",
+    "prod": "npm run package:install && npm run build && npm start",
     "start": "node server.js",
     "test": "node ace test",
     "lint": "eslint . --ext=.ts",
-    "format": "prettier --write ."
+    "prettier:fix": "prettier --write ."
   },
   "eslintConfig": {
     "extends": [
