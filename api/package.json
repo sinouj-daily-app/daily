@@ -7,7 +7,7 @@
     "package:install": "npm i",
     "build": "node ace build --production",
     "prod": "npm run package:install && npm run build",
-    "start": "cd build && npm run prod:ci &&node server.js",
+    "start": "cd build && npm run prod:ci && node server.js",
     "prod:ci": "npm ci --production",
     "test": "node ace test",
     "lint": "eslint . --ext=.ts",
