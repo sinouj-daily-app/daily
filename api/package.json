@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "node ace serve --watch",
+    "install": "npm build",
     "build": "node ace build --production",
+    "build:install": "npm run install && npm run build",
     "start": "node server.js",
     "test": "node ace test",
     "lint": "eslint . --ext=.ts",
