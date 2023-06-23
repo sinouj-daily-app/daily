@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "node ace serve --watch",
     "install:prod": "npm install --production",
-    "build:install": "npm run install && node ace build --production",
+    "build:install": "npm run install:prod && node ace build --production",
     "start": "node server.js",
     "test": "node ace test",
     "lint": "eslint . --ext=.ts",
