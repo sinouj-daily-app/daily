@@ -6,14 +6,13 @@
   "scripts": {
     "develop": "strapi develop",
     "start": "strapi start",
-    "build": "npm i && strapi build",
+    "build": "yarn install && strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
   "dependencies": {
-    "@strapi/strapi": "4.11.2",
-    "@strapi/plugin-users-permissions": "4.11.2",
     "@strapi/plugin-i18n": "4.11.2",
+    "@strapi/plugin-users-permissions": "4.11.2",
+    "@strapi/strapi": "4.11.2",
     "pg": "8.8.0"
   },
   "author": {
