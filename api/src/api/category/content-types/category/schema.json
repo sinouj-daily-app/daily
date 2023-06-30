@@ -4,7 +4,8 @@
   "info": {
     "singularName": "category",
     "pluralName": "categories",
-    "displayName": "Catégorie"
+    "displayName": "Catégorie",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,18 +13,9 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "enumeration",
-      "enum": [
-        "Layvin",
-        "Vaisselle",
-        "Aspirateur",
-        "Rangement",
-        "Linge",
-        "Travaux",
-        "Chat",
-        "Balcon",
-        "Cuisine"
-      ]
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }
