@@ -1,11 +1,20 @@
 import './CardTask.scss'
 
-export const CardTask = () => {
+export const CardTask = ({author, task, date}: Props) => {
     return (
-        <>
-            <h1>Card Task</h1>
-            <p>Content</p>
-            <span>date</span>
-        </>
+        <article>
+            <header>
+                <span>{author}</span>
+                <i></i>
+            </header>
+            <p>{task}</p>
+            <span>{date}</span>
+        </article>
     )
+}
+
+interface Props {
+    author: string,
+    task: string,
+    date: string
 }

@@ -1,4 +1,9 @@
 export interface Task {
-    content: string
-    category: number
+    id: number,
+    attributes: {
+        author: string,
+        content: string,
+        category: number,
+        createdAt: Date
+    }
 }
