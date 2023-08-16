@@ -1,9 +1,9 @@
-import {CardTask} from "../tasks/components/CardTask.tsx";
 import { HomeService } from "../services/HomeService.ts";
-import {useEffect, useMemo, useState} from "react";
-import {ApiService} from "../shared/services/ApiService.ts";
+import { useEffect, useMemo, useState } from "react";
+import { ApiService } from "../shared/services/ApiService.ts";
 import { Task } from "../shared/models/Task.ts";
 import { DateService } from "../shared/services/DateService.ts";
+import { TaskCard } from "../shared/components/cards/TaskCard/TaskCard.tsx";
 
 export const Home = () => {
 
@@ -30,7 +30,7 @@ export const Home = () => {
         {
                 tasks && tasks.map((task: Task) => {
                     return (
-                        <CardTask
+                        <TaskCard
                             key={task.id}
                             author={task.attributes.author}
                             task={task.attributes.content}
