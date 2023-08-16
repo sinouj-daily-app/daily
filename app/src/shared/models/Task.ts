@@ -1,9 +1,11 @@
 export interface Task {
     id: number,
-    attributes: {
-        author: string,
-        content: string,
-        category: number,
-        createdAt: Date
-    }
+    attributes: Attributes
+}
+
+interface Attributes {
+    author: string,
+    content: string,
+    category: number,
+    createdAt: Date
 }
