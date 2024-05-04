@@ -1,19 +1,15 @@
-import {Card, CardContent} from "@mui/joy";
+import {Card, CardContent, Typography} from "@mui/joy";
+import {Task} from "../../../models/Task.ts";
 
-export const TaskCard = ({author, task, date}: Props) => {
+export const TaskCard = ({attributes, id}: Task) => {
     return (
-        <Card>
+        <Card key={id}>
             <CardContent>
-                <p>{author}</p>
-                <p>{task}</p>
-                <p>{`${date}`}</p>
+                <Typography level={"h3"}>category</Typography>
+                <Typography level="body-lg">{attributes.content}</Typography>
+                <p>author</p>
+                <p>{`${attributes.createdAt}`}</p>
             </CardContent>
         </Card>
     )
-}
-
-interface Props {
-    author: string,
-    task: string,
-    date: Date
 }

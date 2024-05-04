@@ -13,7 +13,7 @@ WORKDIR /opt/app
 COPY . .
 RUN chown -R node:node /opt/app
 USER node
-RUN ["yarn", "add", "react@^18.0.0", "react-dom@^18.0.0", "react-router-dom@^5.2.0", "styled-components@^5.2.1"]
+RUN ["yarn", "add", "react@^18.3.1", "react-dom@^18.3.1", "react-router-dom@^5.3.4", "styled-components@^5.2.1"]
 RUN ["yarn", "run", "build"]
 EXPOSE 1337
 CMD ["yarn", "run", "develop"]

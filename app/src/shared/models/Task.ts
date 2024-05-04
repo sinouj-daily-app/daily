@@ -6,6 +6,6 @@ export interface Task {
 interface Attributes {
     author: string,
     content: string,
-    category: number,
+    category: string,
     createdAt: Date
 }
