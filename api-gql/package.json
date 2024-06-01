@@ -2,10 +2,9 @@
   "name": "api-gql",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.ts",
   "scripts": {
-    "compile": "tsc",
-    "start": "npm run compile && node ./dist/index.js"
+    "start": "nodemon src/index.ts"
   },
   "keywords": [],
   "author": "",
@@ -13,10 +12,20 @@
   "type": "module",
   "dependencies": {
     "@apollo/server": "^4.10.4",
-    "graphql": "^16.8.1"
+    "cors": "^2.8.5",
+    "graphql": "^16.8.1",
+    "graphql-tag": "^2.12.6",
+    "pg": "^8.11.5",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.3"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.17",
     "@types/node": "^20.12.8",
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.2",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.11.0",
     "typescript": "^5.4.5"
   }
 }
