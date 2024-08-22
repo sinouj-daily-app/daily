@@ -1,9 +1,0 @@
-type Query {
-    tasks: [Task!]!
-}
-
-type Task {
-    id: ID!
-    title: String!
-    description: String
-}

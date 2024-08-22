@@ -1,9 +1,13 @@
-import {Task} from "../entity/task.entity";
+import { Task } from "../entity";
 import {INTEGER, NOW, STRING, TEXT} from "sequelize";
 import sequelize from "../server/database";
 
 Task.init({
-    id: INTEGER,
+    id: {
+        type: INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+    },
     title: STRING,
     description: TEXT,
     createdAt: NOW,

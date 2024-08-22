@@ -1,4 +1,4 @@
-import { Sequelize} from "sequelize";
+import {Sequelize} from "sequelize";
 import dotenv from "dotenv";
 
 const env = dotenv.config().parsed;

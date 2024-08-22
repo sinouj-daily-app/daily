@@ -1,0 +1,30 @@
+type Task {
+    id: ID!
+    title: String!
+    description: String
+    author: String!
+}
+
+type Query {
+    tasks: [Task]
+}
+
+type Query {
+    task(id: ID!): Task
+}
+
+input addTaskInput {
+    title: String!
+    description: String
+    author: String!
+}
+
+type addTaskPayload {
+    code: Int!
+    success: Boolean!
+    task: Task
+}
+
+type Mutation {
+    addTask(title: String!, description: String, author: String!): addTaskPayload!
+}

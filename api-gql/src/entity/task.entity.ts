@@ -1,5 +1,13 @@
-import {CreationOptional, ForeignKey, InferAttributes, InferCreationAttributes, Model} from "sequelize";
+import {
+    CreationOptional, DataTypes, DATE,
+    ForeignKey,
+    HasManyAddAssociationsMixin,
+    InferAttributes,
+    InferCreationAttributes, INTEGER,
+    Model, TEXT
+} from "sequelize";
 import {User} from "./user.entity";
+import sequelize from "../server/database";
 
 export class Task extends Model<
     InferAttributes<Task>,
@@ -11,4 +19,21 @@ export class Task extends Model<
     declare description: string;
     declare createdAt: CreationOptional<Date>;
     declare updatedAt: CreationOptional<Date>;
+
+    declare addTask: HasManyAddAssociationsMixin<Task, number>;
 }
+
+Task.init({
+    id: {
+        type: INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+    },
+    title: {
+        type: new DataTypes.STRING(128),
+        allowNull: false,
+    },
+    description: TEXT,
+    createdAt: DATE,
+    updatedAt: DATE,
+}, {tableName: 'tasks', sequelize});
