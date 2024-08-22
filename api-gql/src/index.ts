@@ -3,7 +3,7 @@ import sequelize from "./server/database";
 import express from "express";
 import {expressMiddleware} from "@apollo/server/express4";
 import cors from "cors";
-import { resolvers } from "./resolvers";
+import {resolvers} from "./resolvers";
 import {getSchemaFiles, readSchema} from "./server/utils";
 
 const app = express();
@@ -16,7 +16,7 @@ const typeDefs = getSchemaFiles("src/schemas").map(file => {
 app.listen(port, async () => {
     console.log(`Server running on port ${port}`);
 
-    await sequelize.sync({force: true});
+    // await sequelize.sync({force: true});
     const server = new ApolloServer({typeDefs, resolvers});
     await server.start().then(() => {
         console.log(`🚀 Apollo Server ready`);
