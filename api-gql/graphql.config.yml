@@ -1,0 +1,2 @@
+schema: task.schema.graphql
+documents: src/**/*.schema.graphql
