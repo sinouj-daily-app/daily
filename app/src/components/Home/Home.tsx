@@ -1,7 +1,7 @@
-import { useEffect, useMemo, useState } from "react";
-import { DateService } from "../../shared/services/DateService.ts";
+import {useEffect, useMemo, useState} from "react";
+import {DateService} from "@daily/shared/services";
 import {Typography, Grid} from "@mui/joy";
-import {Tasks} from "../../shared/molecules/Tasks.tsx";
+import {Tasks} from "../Tasks/Tasks.tsx";
 
 export const Home = () => {
     const dateService = useMemo(() => new DateService(), [])
@@ -20,7 +20,7 @@ export const Home = () => {
                 <Typography level="h1" fontSize="xxx-large">{currentDate}</Typography>
             </Grid>
             <Grid container spacing={2} justifyContent="center" disableEqualOverflow={true}>
-                <Tasks />
+                <Tasks/>
             </Grid>
         </>
     )

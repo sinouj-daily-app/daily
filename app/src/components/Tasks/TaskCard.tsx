@@ -1,5 +1,5 @@
 import {Card, CardContent, Typography} from "@mui/joy";
-import {Task} from "../../../models/Task.ts";
+import {Task} from "@daily/shared/models";
 
 export const TaskCard = ({attributes, id}: Task) => {
     return (

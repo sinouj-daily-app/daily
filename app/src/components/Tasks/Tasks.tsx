@@ -1,9 +1,9 @@
-import {Task} from "../models/Task.ts";
+import {Task} from "@daily/shared/models";
 import {Grid} from "@mui/joy";
-import {TaskCard} from "../components/cards/TaskCard/TaskCard.tsx";
+import {TaskCard} from "./TaskCard.tsx";
 import {useEffect, useMemo, useState} from "react";
-import {HomeService} from "../../services/HomeService.ts";
-import {ApiService} from "../services/ApiService.ts";
+import {HomeService} from "../Home/HomeService.ts";
+import {ApiService} from "@daily/shared/services";
 
 export const Tasks = () => {
 
