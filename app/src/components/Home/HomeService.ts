@@ -4,10 +4,12 @@ import {gql} from "@apollo/client";
 export class HomeService {
     public getTasks = async () => {
         return this.apiService.get(gql`
-            query Users {
-              users {
+            query Tasks {
+              tasks {
+                author
+                description
                 id
-                name
+                title
               }
             }`
         )

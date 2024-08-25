@@ -33,6 +33,7 @@ Task.init({
         type: new DataTypes.STRING(128),
         allowNull: false,
     },
+    author: INTEGER,
     description: TEXT,
     createdAt: DATE,
     updatedAt: DATE,

@@ -7,4 +7,5 @@ export class ApiService {
     public get(CONST_QUERY: DocumentNode) {
         return this.apolloService.query(CONST_QUERY)
     }
+
 }

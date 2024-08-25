@@ -1,4 +1,5 @@
-import {ApolloClient, DocumentNode, InMemoryCache} from "@apollo/client";
+import {ApolloClient, ApolloQueryResult, DocumentNode, InMemoryCache} from "@apollo/client";
+import {Task} from "@daily/shared/models";
 
 
 export class ApolloService {
@@ -8,11 +9,11 @@ export class ApolloService {
         cache: new InMemoryCache(),
     })
 
-    public query(CONST_QUERY: DocumentNode) {
-        this.client.query({query: CONST_QUERY}).then(result => result).catch(e => console.log(e))
+    public async query(CONST_QUERY: DocumentNode) {
+        return await this.client.query({query: CONST_QUERY}).then((result: ApolloQueryResult<Task[]>) => result).catch(e => console.log(e))
     }
 
-    public mutation(CONST_MUTATION: DocumentNode) {
-        this.client.mutate({mutation: CONST_MUTATION}).then(result => result).catch(e => console.log(e))
+    public async mutation(CONST_MUTATION: DocumentNode) {
+        return await this.client.mutate({mutation: CONST_MUTATION}).then(result => result).catch(e => console.log(e))
     }
 }

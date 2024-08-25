@@ -16,7 +16,7 @@ export const Tasks = () => {
         const tasks = async () => {
             return await homeService.getTasks()
         }
-        tasks().then(res => setTasks(res))
+        tasks().then(res => setTasks(res.data.tasks))
     }, [homeService]);
 
     return (
