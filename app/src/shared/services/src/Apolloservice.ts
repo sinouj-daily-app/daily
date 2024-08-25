@@ -1,10 +1,10 @@
 import {ApolloClient, ApolloQueryResult, DocumentNode, InMemoryCache} from "@apollo/client";
-import {Task} from "@daily/shared/models";
+import {Apollo, Task} from "@daily/shared/models";
 
 
 export class ApolloService {
 
-    public client: ApolloClient<any> = new ApolloClient({
+    public client: ApolloClient<Apollo> = new ApolloClient({
         uri: 'http://localhost:1337/graphql',
         cache: new InMemoryCache(),
     })

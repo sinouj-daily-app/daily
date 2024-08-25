@@ -21,16 +21,14 @@ export const Tasks = () => {
 
     return (
         <>
-            {tasks && tasks.map((task: Task) => {
-                return (
-                    <Grid xs={11} key={task.id}>
-                        <TaskCard
-                            id={task.id}
-                            attributes={task.attributes}
-                        />
-                    </Grid>
-                )
-            })
+            {
+                tasks && tasks.map((task: Task) => {
+                    return (
+                        <Grid xs={11} key={task.id}>
+                            <TaskCard task={task}/>
+                        </Grid>
+                    )
+                })
             }
         </>
     )
