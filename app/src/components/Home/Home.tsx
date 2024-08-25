@@ -8,8 +8,6 @@ export const Home = () => {
     const [currentDate, setCurrentDate] = useState<string>()
 
     useEffect(() => {
-
-
         setCurrentDate(dateService.getTodaysDate())
     }, [dateService])
 
