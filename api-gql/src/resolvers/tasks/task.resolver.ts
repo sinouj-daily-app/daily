@@ -13,7 +13,6 @@ export const resolver = {
         addTask: async (_: any, task: Task) => {
             let data = await Task.create({title: task.title, author: task.author})
 
-            console.log(data)
             return {
                 code: 200,
                 success: true,
