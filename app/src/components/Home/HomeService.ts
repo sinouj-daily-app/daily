@@ -5,14 +5,18 @@ export class HomeService {
     public getTasks = async () => {
         return this.apiService.get(gql`
             query Tasks {
-              tasks {
-                author
-                description
-                id
-                title
-                createdAt
-              }
-            }`
+                tasks {
+                    authorId
+                    description
+                    id
+                    title
+                    updatedAt,
+                    author {
+                        name
+                    }
+                }
+            }
+            `
         )
     }
 

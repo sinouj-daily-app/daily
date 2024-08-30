@@ -4,26 +4,27 @@ import {
     HasManyAddAssociationsMixin,
     InferAttributes,
     InferCreationAttributes, INTEGER,
-    Model, TEXT
+    Model, NonAttribute, TEXT
 } from "sequelize";
-import {User} from "./user.entity";
+import {UserModel} from "./user.entity";
 import sequelize from "../server/database";
 
-export class Task extends Model<
-    InferAttributes<Task>,
-    InferCreationAttributes<Task>
+export class TaskModel extends Model<
+    InferAttributes<TaskModel>,
+    InferCreationAttributes<TaskModel>
 > {
     declare id: CreationOptional<number>;
     declare title: string;
-    declare author: ForeignKey<User['id']>;
+    declare authorId: ForeignKey<UserModel['id']>;
+    declare author?: NonAttribute<UserModel>
     declare description: string;
     declare createdAt: CreationOptional<Date>;
     declare updatedAt: CreationOptional<Date>;
 
-    declare addTask: HasManyAddAssociationsMixin<Task, number>;
+    declare addTask: HasManyAddAssociationsMixin<TaskModel, number>;
 }
 
-Task.init({
+TaskModel.init({
     id: {
         type: INTEGER,
         primaryKey: true,
@@ -33,7 +34,6 @@ Task.init({
         type: new DataTypes.STRING(128),
         allowNull: false,
     },
-    author: INTEGER,
     description: TEXT,
     createdAt: DATE,
     updatedAt: DATE,

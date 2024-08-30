@@ -1,10 +1,11 @@
 type Task {
     id: ID!
     title: String!
-    author: String!
+    authorId: Int!
     description: String
     createdAt: String
     updatedAt: String
+    author: Author
 }
 
 type Query {
@@ -18,7 +19,7 @@ type Query {
 input addTaskInput {
     title: String!
     description: String
-    author: String!
+    author: Int!
 }
 
 type addTaskPayload {
@@ -28,5 +29,5 @@ type addTaskPayload {
 }
 
 type Mutation {
-    addTask(title: String!, description: String, author: String!): addTaskPayload!
+    addTask(title: String!, description: String, author: Int!): addTaskPayload!
 }

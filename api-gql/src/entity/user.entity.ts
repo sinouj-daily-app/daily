@@ -1,9 +1,10 @@
 import {CreationOptional, DATE, InferAttributes, InferCreationAttributes, INTEGER, Model, STRING} from "sequelize";
 import sequelize from "../server/database";
+import {TaskModel} from "./task.entity";
 
-export class User extends Model<
-    InferAttributes<User>,
-    InferCreationAttributes<User>
+export class UserModel extends Model<
+    InferAttributes<UserModel>,
+    InferCreationAttributes<UserModel>
 > {
     declare id: CreationOptional<number>;
     declare name: string;
@@ -11,7 +12,7 @@ export class User extends Model<
     declare updatedAt: CreationOptional<Date>;
 }
 
-User.init({
+UserModel.init({
     id: {
         type: INTEGER,
         primaryKey: true,
@@ -23,3 +24,9 @@ User.init({
     createdAt: DATE,
     updatedAt: DATE
 }, {tableName: 'users', sequelize})
+
+UserModel.hasMany(TaskModel, {
+    foreignKey: 'authorId',
+})
+
+TaskModel.belongsTo(UserModel, {foreignKey: 'authorId'})

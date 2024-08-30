@@ -1,17 +1,17 @@
-import {User} from "../../entity";
+import {UserModel} from "../../entity";
 
 export const resolver = {
     Query: {
-        user: async (_: any, id: number) => {
-            return await User.findByPk(id);
+        author: async (_: any, user: UserModel) => {
+            return await UserModel.findByPk(user.id);
         },
-        users: async () => {
-            return await User.findAll()
+        authors: async () => {
+            return await UserModel.findAll()
         }
     },
     Mutation: {
-        createUser: async (_: any, user: User) => {
-            let data = await User.create({name: user.name})
+        createUser: async (_: any, user: UserModel) => {
+            let data = await UserModel.create({name: user.name})
 
             return {
                 code: 200,

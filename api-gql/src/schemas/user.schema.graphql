@@ -1,14 +1,14 @@
-type User {
+type Author {
   id: ID!
   name: String!
 }
 
 type Query {
-  users: [User!]!
+  authors: [Author!]!
 }
 
 type Query {
-  user(id: ID!): User
+  author(id: ID!): Author
 }
 
 input createUserInput {
@@ -18,7 +18,7 @@ input createUserInput {
 type createUserPayload {
   code: Int!
   success: Boolean!
-  user: User!
+  author: Author!
 }
 
 type Mutation {

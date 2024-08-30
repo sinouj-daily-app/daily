@@ -1,6 +1,9 @@
+import {User} from "./User.ts";
+
 export interface Task {
     id: number,
-    author: number,
+    authorId: number,
+    author: User,
     description: string,
     title: string,
     createdAt: Date,
