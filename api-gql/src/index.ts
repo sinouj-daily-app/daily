@@ -16,7 +16,7 @@ const typeDefs = getSchemaFiles("src/schemas").map(file => {
 app.listen(port, async () => {
     console.log(`Server running on port ${port}`);
 
-    // await sequelize.sync({force: true});
+    await sequelize.sync();
     const server = new ApolloServer({typeDefs, resolvers});
     await server.start().then(() => {
         console.log(`🚀 Apollo Server ready`);
