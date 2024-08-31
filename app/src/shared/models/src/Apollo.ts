@@ -1,6 +1,6 @@
-import {InMemoryCacheConfig} from "@apollo/client";
+import { InMemoryCacheConfig } from '@apollo/client';
 
 export type Apollo = {
-    uri: string,
-    cache: InMemoryCacheConfig
-}
+  uri: string;
+  cache: InMemoryCacheConfig;
+};

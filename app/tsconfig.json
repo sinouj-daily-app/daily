@@ -2,11 +2,7 @@
   "compilerOptions": {
     "target": "ES2023",
     "useDefineForClassFields": true,
-    "lib": [
-      "ES2023",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
     "moduleResolution": "bundler",
@@ -17,25 +13,16 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@daily/shared/services": [
-        "src/shared/services"
-      ],
-      "@daily/shared/models": [
-        "src/shared/models"
-      ]
+      "@daily/shared/services": ["src/shared/services"],
+      "@daily/shared/models": ["src/shared/models"]
     },
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": [
-    "src"
-  ],
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ],
+  "include": ["src"],
+  "exclude": ["node_modules", "tmp"],
   "references": [
     {
       "path": "./tsconfig.node.json"
