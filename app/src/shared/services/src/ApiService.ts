@@ -1,11 +1,10 @@
-import {ApolloService} from "./ApolloService.ts";
-import {DocumentNode} from "@apollo/client";
+import { ApolloService } from './ApolloService.ts';
+import { DocumentNode } from '@apollo/client';
 
 export class ApiService {
-    apolloService = new ApolloService()
+  apolloService = new ApolloService();
 
-    public get(CONST_QUERY: DocumentNode) {
-        return this.apolloService.query(CONST_QUERY)
-    }
-
+  public get(CONST_QUERY: DocumentNode) {
+    return this.apolloService.query(CONST_QUERY);
+  }
 }
