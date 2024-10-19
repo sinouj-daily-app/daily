@@ -1,6 +1,7 @@
 import { Card, CardContent, Typography } from '@mui/joy';
 import { Task } from '@daily/shared/models';
 
+// @ts-ignore
 export const TaskCard = ({ task }: Task) => {
   const { id, title, description, author, updatedAt } = task;
 
