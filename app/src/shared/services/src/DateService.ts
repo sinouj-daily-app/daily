@@ -1,11 +1,20 @@
 import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 
 export class DateService {
-  private sanitizeDate(date: dayjs.Dayjs): string {
+  constructor() {
+    dayjs.extend(relativeTime);
+  }
+
+  private sanitizeDate(date: string): string {
     return dayjs(date).format('DD-MM-YYYY');
   }
 
+  getRelativeDate(date: string): string {
+    return dayjs(+date).fromNow().toString();
+  }
+
   public getTodaysDate(): string {
-    return this.sanitizeDate(dayjs());
+    return this.sanitizeDate(dayjs().toString());
   }
 }
