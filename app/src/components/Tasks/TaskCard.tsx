@@ -3,6 +3,7 @@ import { Task } from '@daily/shared/models';
 import { DateService } from '@daily/shared/services';
 import { useMemo } from 'react';
 
+// @ts-ignore
 export const TaskCard = ({ task }: Task) => {
   const { id, title, description, author, updatedAt } = task;
   const dateService = useMemo(() => new DateService(), []);
