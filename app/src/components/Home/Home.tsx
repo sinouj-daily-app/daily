@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { DateService } from '@daily/shared/services';
 import { Typography, Grid } from '@mui/joy';
 import { Tasks } from '../Tasks/Tasks.tsx';
+import { MenuButton } from '../MenuButton/MenuButton.tsx';
 
 export const Home = () => {
   const dateService = useMemo(() => new DateService(), []);
@@ -26,6 +27,7 @@ export const Home = () => {
       >
         <Tasks />
       </Grid>
+      <MenuButton />
     </>
   );
 };

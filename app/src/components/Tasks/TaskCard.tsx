@@ -7,7 +7,7 @@ import { useMemo } from 'react';
 export const TaskCard = ({ task }: Task) => {
   const { id, title, description, author, updatedAt } = task;
   const dateService = useMemo(() => new DateService(), []);
-  let relativeDate = dateService.getRelativeDate(updatedAt);
+  const relativeDate = dateService.getRelativeDate(updatedAt);
 
   return (
     <Card key={id}>
