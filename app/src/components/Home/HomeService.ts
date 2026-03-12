@@ -5,6 +5,5 @@ export class HomeService {
         return this.apiService.get("")
     }
 
-    constructor(private apiService: ApiService) {
-    }
+  constructor(private apiService: ApiService) {}
 }
